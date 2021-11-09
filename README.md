@@ -1,0 +1,1 @@
+[Demo](https://ostap-mamchur.github.io/batch-of-photos/build)
