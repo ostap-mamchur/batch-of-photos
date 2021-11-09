@@ -1,4 +1,4 @@
-import Search from "./components/Form/Search";
+import Search from "./components/Search/Search";
 import Grid from "./components/Grid/Grid";
 
 function App() {
