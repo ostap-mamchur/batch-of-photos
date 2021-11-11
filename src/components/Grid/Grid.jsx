@@ -1,7 +1,7 @@
 import Image from "./Image/Image";
 import { useSelector } from "react-redux";
 import { selectImages, selectStatus } from "../../redux/imagesSlice";
-import Loading from "./Loading/Loading";
+import Loading from "../Loading/Loading";
 
 function Grid() {
   const images = useSelector(selectImages);

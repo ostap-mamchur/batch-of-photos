@@ -54,3 +54,4 @@ export const { cancelFetch } = imagesSlice.actions;
 
 export const selectImages = (state) => state.images.images;
 export const selectStatus = (state) => state.images.status;
+export const selectError = (state) => state.images.error;

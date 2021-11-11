@@ -5,10 +5,9 @@ const tagsSlice = createSlice({
   name: "tags",
   initialState: [],
   reducers: {
-    addTags(state, action) {
-      const items = action.payload;
-      items.forEach((item) => {
-        const tags = item.tags.split(" ");
+    addTags: {
+      reducer: (state, action) => {
+        const tags = action.payload;
         tags.forEach((tag) => {
           const existingTag = state.find((t) => t.name === tag);
           if (existingTag) {
@@ -17,7 +16,14 @@ const tagsSlice = createSlice({
             state.push({ name: tag, number: 1 });
           }
         });
-      });
+      },
+      prepare: (items) => {
+        const allTags = items.reduce((prev, curr) => {
+          const tags = curr.tags.split(" ");
+          return prev.concat(tags);
+        }, []);
+        return { payload: allTags };
+      },
     },
   },
 });
